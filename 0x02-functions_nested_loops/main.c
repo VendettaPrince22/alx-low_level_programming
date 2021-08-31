@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 /**
  * main - prints the string "Holberton" from a character array.
  * Return: 0 on success.
@@ -10,8 +10,8 @@ int var;
 
 for (var = 0; var <= 8; var++)
 {
-putchar(c[var]);
+_putchar(c[var]);
 }
-putchar('\n');
+_putchar('\n');
 return (0);
 }
