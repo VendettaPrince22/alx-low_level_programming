@@ -8,7 +8,7 @@ int main(void)
 char c[] = "_putchar";
 int var;
 
-for (var = 0; var <= 8; var++)
+for (var = 0; var <= 7; var++)
 {
 _putchar(c[var]);
 }
