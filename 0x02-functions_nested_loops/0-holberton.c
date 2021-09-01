@@ -12,6 +12,5 @@ for (var = 0; var <= 8; var++)
 {
 _putchar(c[var]);
 }
-_putchar('\n');
 return (0);
 }
