@@ -28,6 +28,6 @@ sign *= -1;
 }
 i++;
 }
-result = re * sign;
+result = re *sign;
 return (result);
 }
