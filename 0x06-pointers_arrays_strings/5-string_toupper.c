@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * *string_to_upper - convert string to uppercase
+ * *string_toupper - convert string to uppercase
  * @s: string to convert
  * Return: the converted to uppercase
  */
