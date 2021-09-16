@@ -21,7 +21,7 @@ return (function(b + 1, a));
 }
 }
 /**
- * _sqrt_recursion recursive function
+ * _sqrt_recursion - recursive function
  * @n: passed number
  * Return: sds
  */
