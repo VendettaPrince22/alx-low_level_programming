@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _puts_recursion _ prints a char recursively
+ * _puts_recursion - prints a char recursively
  * @s: passed variable
  * Return: void
  *
