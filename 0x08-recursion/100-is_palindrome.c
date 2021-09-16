@@ -20,7 +20,7 @@ return (i + _strlen_recursion(s + 1));
  * @len: length of a string
  * Return: function will return 1 if string is a palindrome and 0 if not
  */
-int palidrome(char *s, int len)
+int palindrome(char *s, int len)
 {
 if (*(s + 1) == 00)
 {
