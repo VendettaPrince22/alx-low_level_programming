@@ -17,7 +17,7 @@ if (size == 0)
 return (0);
 }
 a = (char *)malloc(size * sizeof(c));
-if (a = NULL)
+if (a == NULL)
 {
 return (0);
 }
