@@ -32,7 +32,7 @@ return (NULL);
 else
 {
 m = _strlen(str);
-n = (char *)malloc(m * sizeof(char) + 1);
+a = (char *)malloc(m * sizeof(char) + 1);
 if (a == NULL)
 {
 return (0);
