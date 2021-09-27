@@ -34,9 +34,9 @@ if (s2 == NULL)
 {
 s2 = " ";
 }
-len_s1 = _srtlen(s1);
+len_s1 = _strlen(s1);
 len_s2 = _strlen(s2);
-ptr = malloc(((len_s1) + (len_s2) + 1) * sizeof(char));
+ptr = malloc(((len_s1)+(len_s2)+1) * sizeof(char));
 
 if (ptr == NULL)
 {
@@ -46,7 +46,7 @@ for (m = 0; m < len_s1; m++)
 {
 ptr[m] = s1[m];
 }
-for (i = len_s1; o = 0; o <= len_s2; i++, o++)
+for (i = len_s1, o = 0; o <= len_s2; i++, o++)
 {
 ptr[i] = s2[o];
 }
