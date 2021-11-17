@@ -28,11 +28,11 @@ int len_s1, len_s2, m, i, o;
 
 if (s1 == NULL)
 {
-s1 = " ";
+s1 = "";
 }
 if (s2 == NULL)
 {
-s2 = " ";
+s2 = "";
 }
 len_s1 = _strlen(s1);
 len_s2 = _strlen(s2);
