@@ -3,13 +3,12 @@
 /**
  * sum_them_all - returns sum of all its parameters
  * @n: first integer
- * 
  * Return: sum
  * if n == 0, return 0
  */
 int sum_them_all(const unsigned int n, ...)
 {
-        unsigned int sum;
+        int sum;
         unsigned int i;
         va_list my_list;
 
