@@ -23,5 +23,10 @@ char *_strchr(char *s, char c)
 		}
 		i++;
 	}
+	if (s[i] == '\0' && s[i] == c)
+	{
+		str = &s[i];
+		return (str);
+	}
 	return (NULL);
 }
