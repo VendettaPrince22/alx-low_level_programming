@@ -27,7 +27,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s2 = NULL ? "" : s2;
 	i = _strlen(s1);
 	k = _strlen(s2);
-	
+
 	/*Check if s2 length is less than n*/
 	if (n >= k)
 	{
