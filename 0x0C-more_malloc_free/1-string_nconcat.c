@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+int _strlen(char *s);
+
 /**
  * string_nconcat - concatenates two strings
  *
@@ -20,18 +22,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int j;
 	unsigned int k;
 
-	/*Get size of s1*/
-	i = 0;
-	while (s1[i] != '\0')
-	{
-		i++;
-	}
-	/*Get size of s2*/
-	k = 0;
-	while (s2[k] != '\0')
-	{
-		k++;
-	}
+	/*Get size of s1 and s2*/
+	i = _strlen(s1);
+	k = _strlen(s2);
 	/*Check if s2 length is less than n*/
 	if (n >= k)
 	{
@@ -55,4 +48,23 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	pts[n] = '\0';
 	return (pts);
+}
+
+/**
+ * _strlen - gets length of string
+ * @s: string to get length of
+ *
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+
+	return (i);
 }
