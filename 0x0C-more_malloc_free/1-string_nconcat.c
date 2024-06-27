@@ -33,12 +33,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		k++;
 	}
 	/*Check if s2 length is less than n*/
-	if (k < n)
+	if (n >= k)
 	{
 		n = k;
 	}
 	n += i;
-	pts = malloc(n * sizeof(char));
+	pts = malloc((n + 1) * sizeof(char));
+	if (pts == NULL)
+	{
+		return (NULL);
+	}
 	/*place s1 in the first i bytes / memory*/
 	for (count = 0; count < i; count++)
 	{
@@ -49,9 +53,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		pts[count] = s2[j];
 	}
-	if (pts == NULL)
-	{
-		return (NULL);
-	}
+	pts[n] = '\0';
 	return (pts);
 }
