@@ -1,3 +1,4 @@
+#include <stdlib.h>
 
 /**
  * int_index - searches for an integer
@@ -14,6 +15,11 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int index;
 	int bool;
 
+	if (array == NULL || cmp == NULL)
+	{
+		return;
+	}
+
 	if (size <= 0)
 	{
 		return (-1);
@@ -22,7 +28,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	index = 0;
 	while (index < size)
 	{
-		bool = (*cmp)(array[index]);
+		bool = cmp(array[index]);
 		/*When the function returns true, get its index*/
 		if (bool != 0)
 		{
