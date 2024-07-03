@@ -12,25 +12,32 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-        hash_node_t *new_node;
-        unsigned long int h_val;
-        const char *my_key;
-        const char *my_value;
+	hash_node_t *new_node;
+	unsigned long int h_val;
+	const char *my_key;
+	const char *my_value;
 
-        h_val = hash_djb2((unsigned char *)key) % ht->size;
-        my_key = key;
-        my_value = value;
+	h_val = key_index((const unsigned char *)key, ht->size);
+	my_key = key;
+	my_value = value;
 
-        new_node = malloc(sizeof(hash_node_t));
-        if (new_node == NULL)
-        {
-                return (0);
-        }
-        new_node->key = (char *)my_key;
-        new_node->value = (char *)my_value;
-        new_node->next = ht->array[h_val + 1];
+	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+	{
+		return (0);
+	}
+	new_node->key = (char *)my_key;
+	new_node->value = (char *)my_value;
 
-        ht->array[h_val] = new_node;
+	if (ht->array[h_val])
+	{
+		new_node->next = ht->array[h_val];
+	}
+	else
+	{
+		new_node->next = NULL;
+	}
+	ht->array[h_val] = new_node;
 
-        return (1);
+	return (1);
 }
