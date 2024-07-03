@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->key = (char *)my_key;
 	new_node->value = (char *)my_value;
 
-	if (ht->array[h_val])
+	if (ht->array[h_val] && strcmp(ht->array[h_val]->key, my_key))
 	{
 		new_node->next = ht->array[h_val];
 	}
