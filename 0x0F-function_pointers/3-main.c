@@ -32,12 +32,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if (b == 0 && strcmp(op, "/") == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	if (b == 0 && strcmp(op, "%") == 0)
+	if (b == 0 && (strcmp(op, "/") == 0 || strcmp(op, "%") == 0))
 	{
 		printf("Error\n");
 		exit(100);
