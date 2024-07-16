@@ -1,5 +1,6 @@
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * create_file - creates a file
@@ -18,11 +19,15 @@ int create_file(const char *filename, char *text_content)
         int fd;
         int i;
 
-        i = 0;
-        while (text_content[i] != '\0')
+        if (text_content != NULL)
         {
-                i++;
+                i = 0;
+                while (text_content[i] != '\0')
+                {
+                        i++;
+                }
         }
+        
 
         if (filename == NULL)
         {
@@ -35,15 +40,7 @@ int create_file(const char *filename, char *text_content)
                 return (-1);
         }
 
-        if (text_content == NULL)
-        {
-                text_content = "";
-                write(fd, text_content, i);
-        }
-        else
-        {
-                write(fd, text_content, i);
-        }
+        write(fd, text_content, i);
         
         close(fd);
 
