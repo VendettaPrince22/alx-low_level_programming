@@ -34,7 +34,6 @@ int main(int ac, char **av)
 	char *file_to;
 	size_t count;
 	ssize_t byts;
-	ssize_t byt;
 
 	if (ac < 2)
 	{
@@ -44,7 +43,6 @@ int main(int ac, char **av)
 
 	count = 1024;
 	byts = 1;
-	byt = 0;
 	buffer = malloc(sizeof(char *) * count);
 	file_from = av[1];
 	file_to = av[2];
@@ -55,10 +53,9 @@ int main(int ac, char **av)
 	while (byts != 0)
 	{
 		byts = read(fd_from, buffer, count);
-		byt += write(fd_to, buffer, count_buffer(buffer));
+		write(fd_to, buffer, count_buffer(buffer));
 	}
 
-	dprintf(2, "%ld", byt);
 	free(buffer);
 
 	return (0);
