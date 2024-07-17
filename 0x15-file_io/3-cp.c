@@ -35,10 +35,10 @@ int main(int ac, char **av)
 	size_t count;
 	ssize_t byts;
 
-	if (ac < 2)
+	if (ac < 3)
 	{
 		dprintf(2, "Usage: cp file_from file_to");
-		exit(99);
+		exit(97);
 	}
 
 	count = 1024;
