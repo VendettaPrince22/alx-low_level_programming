@@ -3,8 +3,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+size_t count_buffer(char *buffer);
+
 /**
  * main - copies the content of a file to another file.
+ * @ac: number of arguments passed
+ * @av: the arguments passed
  *
  * Return: Always 0.
  * Usage: cp file_from file_to.
@@ -30,6 +34,7 @@ int main(int ac, char **av)
 	char *file_to;
 	size_t count;
 	ssize_t byts;
+	ssize_t byt;
 
 	if (ac < 2)
 	{
@@ -37,8 +42,9 @@ int main(int ac, char **av)
 		exit(99);
 	}
 
-	count = 1024;
+	count = 10;
 	byts = 1;
+	byt = 0;
 	buffer = malloc(sizeof(char *) * count);
 	file_from = av[1];
 	file_to = av[2];
@@ -49,10 +55,30 @@ int main(int ac, char **av)
 	while (byts != 0)
 	{
 		byts = read(fd_from, buffer, count);
-		write(fd_to, buffer, count);
+		byt += write(fd_to, buffer, count_buffer(buffer));
 	}
 
+	dprintf(2, "%ld", byt);
 	free(buffer);
 
 	return (0);
+}
+
+/**
+ * count_buffer - counts the number of characters present in a string
+ * @buffer: string to compute
+ *
+ * Return: the number of characters
+ */
+size_t count_buffer(char *buffer)
+{
+	size_t count;
+
+	count = 0;
+	while (buffer[count] != '\0')
+	{
+		count++;
+	}
+
+	return (count);
 }
