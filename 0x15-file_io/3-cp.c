@@ -42,7 +42,7 @@ int main(int ac, char **av)
 		exit(99);
 	}
 
-	count = 10;
+	count = 1024;
 	byts = 1;
 	byt = 0;
 	buffer = malloc(sizeof(char *) * count);
