@@ -5,7 +5,7 @@
 
 /**
  * main - copies the content of a file to another file.
- * 
+ *
  * Return: Always 0.
  * Usage: cp file_from file_to.
  * If number of arguments is not correct,
@@ -29,6 +29,7 @@ int main(int ac, char **av)
 	int fd_to;
 	char *file_to;
 	size_t count;
+	ssize_t byts;
 
 	if (ac < 2)
 	{
@@ -37,15 +38,19 @@ int main(int ac, char **av)
 	}
 
 	count = 1024;
+	byts = 1;
 	buffer = malloc(sizeof(char *) * count);
 	file_from = av[1];
 	file_to = av[2];
 
 	fd_from = open(file_from, O_RDONLY);
-	fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 00664);
+	fd_to = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 
-	read(fd_from, buffer, count);
-	write(fd_to, buffer, count);
+	while (byts != 0)
+	{
+		byts = read(fd_from, buffer, count);
+		write(fd_to, buffer, count);
+	}
 
 	free(buffer);
 
