@@ -34,10 +34,13 @@ int append_text_to_file(const char *filename, char *text_content)
 	}
 	fd = open(filename, O_WRONLY | O_APPEND);
 
-	byt = write(fd, text_content, count);
-	if (byt == -1)
+	if (text_content != NULL)
 	{
-		return (-1);
+		byt = write(fd, text_content, count);
+		if (byt == -1)
+		{
+			return (-1);
+		}
 	}
 
 	close(fd);
