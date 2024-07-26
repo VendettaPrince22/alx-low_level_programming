@@ -1,0 +1,4 @@
+all: say_hello
+
+say_hello:
+	gcc main.c school.c -o school
