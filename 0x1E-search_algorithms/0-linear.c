@@ -11,7 +11,8 @@
  */
 int linear_search(int *array, size_t size, int value)
 {
-	int count;
+	int index;
+	size_t count;
 
 	if (array == NULL)
 	{
@@ -19,13 +20,15 @@ int linear_search(int *array, size_t size, int value)
 	}
 
 	count = 0;
+	index = 0;
 	while (count < size)
 	{
-		printf("Value checked array[%d] = [%d]\n", count, array[count]);
+		printf("Value checked array[%d] = [%d]\n", index, array[count]);
 		if (array[count] == value)
 		{
-			return (count);
+			return (index);
 		}
+		index++;
 		count++;
 	}
 
